@@ -22,7 +22,7 @@ pod 'RxKeychain'
 
 ## Author
 
-ahmed.almasri@ymail.com, ahmed.almasri@ymail.com
+Ahmad Alamsri, ahmed.almasri@ymail.com
 
 ## License
 
