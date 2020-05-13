@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxKeychain'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Wrapper for the iOS Keychain written in RxSwift'
   s.description      = <<-DESC
   Use SwiftKeychainWrapper to Keychain in RxSwift
