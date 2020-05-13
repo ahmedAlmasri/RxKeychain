@@ -15,7 +15,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		_ = KeychainWrapper.standard.rx.get(forKey: "", type: String.self)
+		KeychainWrapper.standard.rx.set(key: "t", value: "aaa").subscribe(onNext: { _ in
+			
+		}, onError: { (error) in
+			
+			}).dispose()
+		
+		KeychainWrapper.standard.rx.get(forKey: "t",type: String.self).subscribe(onNext: { v in
+				print(v)
+			}, onError: { (error) in
+				
+				}).dispose()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
