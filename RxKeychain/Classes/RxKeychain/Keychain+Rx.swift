@@ -15,7 +15,7 @@ public extension Reactive where Base: KeychainWrapper {
 	func set<T>(key: String, value: T, accessibility: KeychainItemAccessibility? = nil) -> Observable<Void> {
 		return Observable<Void>.create({(observer) -> Disposable in
 			
-			if self.set(key: key, value: T.self, accessibility: accessibility) {
+			if self.set(key: key, value: value, accessibility: accessibility) {
 				observer.onCompleted()
 			}else {
 				observer.onError(NSError())
@@ -23,11 +23,11 @@ public extension Reactive where Base: KeychainWrapper {
 			return Disposables.create()
 		})
 	}
-	func get<T>(forKey key: String, type: T.Type) -> Observable<T?> {
+	func get<T>(forKey key: String, type: T.Type, accessibility: KeychainItemAccessibility? = nil) -> Observable<T?> {
 		return Observable<T?>.create({(observer) -> Disposable in
 			
-			let value =  self.base.object(forKey: "")
-			observer.onNext(value as? T)
+			let value: T? =  self.get(key: key, accessibility: accessibility)
+			observer.onNext(value)
 			observer.onCompleted()
 			
 			return Disposables.create()
