@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'RxKeychain_Example' do
-  pod 'RxKeychain', :path => '../'
+  pod 'RxKeychain'
 
   target 'RxKeychain_Tests' do
     inherit! :search_paths
