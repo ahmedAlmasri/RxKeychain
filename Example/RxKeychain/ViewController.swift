@@ -7,11 +7,15 @@
 //
 
 import UIKit
-
+import RxSwift
+import RxKeychain
+ 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		_ = KeychainWrapper.standard.rx.get(forKey: "", type: String.self)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

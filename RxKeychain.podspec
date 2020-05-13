@@ -9,34 +9,18 @@
 Pod::Spec.new do |s|
   s.name             = 'RxKeychain'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of RxKeychain.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'Wrapper for the iOS Keychain written in RxSwift'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Use SwiftKeychainWrapper to Keychain in RxSwift
                        DESC
-
-  s.homepage         = 'https://github.com/ahmed.almasri@ymail.com/RxKeychain'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+					   
+  s.module_name = "RxKeychain"
+  s.homepage         = 'https://github.com/ahmedAlmasri/RxKeychain'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ahmed.almasri@ymail.com' => 'ahmed.almasri@ymail.com' }
-  s.source           = { :git => 'https://github.com/ahmed.almasri@ymail.com/RxKeychain.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'RxKeychain/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'RxKeychain' => ['RxKeychain/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.source           = { :git => 'https://github.com/ahmedAlmasri/RxKeychain.git', :tag => s.version.to_s }
+  s.ios.deployment_target = '10.0'
+  s.swift_version = ['4.2', '5.0']
+  s.source_files = 'RxKeychain/Classes/**/*.swift'
+  s.dependency 'RxSwift'
 end

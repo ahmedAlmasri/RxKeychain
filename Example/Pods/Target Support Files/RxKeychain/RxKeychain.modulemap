@@ -1,0 +1,6 @@
+framework module RxKeychain {
+  umbrella header "RxKeychain-umbrella.h"
+
+  export *
+  module * { export * }
+}
