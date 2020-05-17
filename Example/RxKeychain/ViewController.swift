@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		KeychainWrapper.standard.rx.set(key: "t", value: "aaa").subscribe(onNext: { _ in
+		KeychainWrapper.standard.rx.set(key: "t", value: "aaa").asObservable().subscribe(onNext: { _ in
 			
 		}, onError: { (error) in
 			
 			}).dispose()
 		
-		KeychainWrapper.standard.rx.get(forKey: "t",type: String.self).subscribe(onNext: { v in
+		KeychainWrapper.standard.rx.get(forKey: "t",type: String.self).asObservable().subscribe(onNext: { v in
 				print(v)
 			}, onError: { (error) in
 				
