@@ -12,23 +12,26 @@ extension KeychainWrapper: ReactiveCompatible {}
 
 public extension Reactive where Base: KeychainWrapper {
 	
-	func set<T>(key: String, value: T, accessibility: KeychainItemAccessibility? = nil) -> Observable<Void> {
-		return Observable<Void>.create({(observer) -> Disposable in
+	func set<T>(key: String, value: T, accessibility: KeychainItemAccessibility? = nil) -> Single<Void> {
+		return Single<Void>.create(subscribe: {(observer) -> Disposable in
 			
 			if self.set(key: key, value: value, accessibility: accessibility) {
-				observer.onCompleted()
+				observer(.success(()))
 			}else {
-				observer.onError(NSError())
+				observer(.error(KeychainError.missingDataType))
 			}
 			return Disposables.create()
 		})
 	}
-	func get<T>(forKey key: String, type: T.Type, accessibility: KeychainItemAccessibility? = nil) -> Observable<T?> {
-		return Observable<T?>.create({(observer) -> Disposable in
-			
-			let value: T? =  self.get(key: key, accessibility: accessibility)
-			observer.onNext(value)
-			observer.onCompleted()
+	func get<T>(forKey key: String, type: T.Type, accessibility: KeychainItemAccessibility? = nil) -> Single<T> {
+		return Single<T>.create(subscribe: {(observer) -> Disposable in
+		
+			if let value: T = self.get(key: key, accessibility: accessibility) {
+				observer(.success(value))
+			}else {
+				
+				observer(.error(KeychainError.keyNotFound))
+			}
 			
 			return Disposables.create()
 		})
