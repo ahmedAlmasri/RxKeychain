@@ -1,6 +1,6 @@
 {
   "name": "RxKeychain",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "summary": "Wrapper for the iOS Keychain written in RxSwift",
   "description": "Use SwiftKeychainWrapper to Keychain in RxSwift",
   "module_name": "RxKeychain",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/ahmedAlmasri/RxKeychain.git",
-    "tag": "0.1.4"
+    "tag": "0.1.5"
   },
   "platforms": {
     "ios": "10.0"

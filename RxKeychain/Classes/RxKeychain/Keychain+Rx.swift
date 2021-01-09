@@ -18,7 +18,7 @@ public extension Reactive where Base: KeychainWrapper {
 			if self.set(key: key, value: value, accessibility: accessibility) {
 				observer(.success(()))
 			}else {
-				observer(.error(KeychainError.missingDataType))
+                observer(.failure(KeychainError.missingDataType))
 			}
 			return Disposables.create()
 		})
@@ -30,7 +30,7 @@ public extension Reactive where Base: KeychainWrapper {
 				observer(.success(value))
 			}else {
 				
-				observer(.error(KeychainError.keyNotFound))
+				observer(.failure(KeychainError.keyNotFound))
 			}
 			
 			return Disposables.create()

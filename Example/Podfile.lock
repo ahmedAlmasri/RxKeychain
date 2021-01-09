@@ -1,7 +1,7 @@
 PODS:
-  - RxKeychain (0.1.4):
+  - RxKeychain (0.1.5):
     - RxSwift
-  - RxSwift (5.1.1)
+  - RxSwift (6.0.0)
 
 DEPENDENCIES:
   - RxKeychain (from `../`)
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RxKeychain: 6524d20b43a6450c7a5ed5552469abc54ac9a068
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxKeychain: 5732f60f8a8198c75ccacc17c417d7468dabdd8a
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
 
 PODFILE CHECKSUM: b76cba1a18ffb5366a667bbf2596ce1c6fa41518
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
